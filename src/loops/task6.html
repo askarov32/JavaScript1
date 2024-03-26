@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        let books = [
+            {name:"Harry Potter and the Philosopher's Stone", author:"Joanne Rowling", ISBN:"1233123", price:"50$"},
+            {name:"Harry Potter and the Chamber of Secrets", author:"Joanne Rowling", ISBN:"222332", price:"40$"},
+            {name:"Harry Potter and the Prisoner of Azkaban", author:"Joanne Rowling", ISBN:"452323", price:"30$"},
+            {name:"Belyi Klik", author:"Jack London", ISBN:"2334123", price:"90$"}
+        ]
+        let author = prompt("Enter the author's name:");
+        for (let i = 0; i < books.length; i++) {
+            if (books[i]["author"] === author) {
+                console.log(JSON.stringify(books[i]));
+            }
+        }
+    </script>
+</body>
+</html>

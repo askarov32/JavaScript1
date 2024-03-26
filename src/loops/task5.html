@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        users = [
+            {"login":"ilyas", "password": "qwerty"},
+            {"login":"eldar", "password": "qqqqq"},
+            {"login":"assylkhan", "password": "qweqwe"},
+            {"login":"anel", "password": "asdasd"},
+            {"login":"alibek", "password": "aaaaaa"}
+        ]
+        let login = prompt()
+        let password = prompt()
+        let flag = false
+        for (let i = 0; i < users.length; i++) {
+            if (users[i]["login"] === login && users[i]["password"] === password){
+                flag = true
+                alert("Welcome, you are authenticated")
+            }
+        }
+        if (!flag) {
+            alert("User not found")
+        }
+    </script>
+</body>
+</html>
