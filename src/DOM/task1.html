@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM task 1</title>
+</head>
+<body>
+<form id="firstForm" style="margin: 20px; align-content: space-around">
+  LOGIN: <input type="text" id="loginInput" style="margin-bottom: 10px; font-size: large"><br>
+  PASSWORD: <input type="text" id="passwordInput" style="font-size: large">
+</form>
+<button id="button" style="background-color: #2e74b5; margin-left: 225px; color: aliceblue; font-size: large">SIGN IN</button>
+<script>
+  let button = document.getElementById('button');
+  let loginInput = document.getElementById('loginInput');
+  let passwordInput = document.getElementById('passwordInput');
+  let arr = [
+    {login: "insar", password: "123"},
+    {login: "ins", password: "123456"},
+    {login: "askarov", password: "321"},
+  ];
+  function getInfo(login, password) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i]["login"] === login && arr[i]["password"] === password) {
+        alert("You are authenticated")
+      } else {
+        loginInput.style.borderColor = "#ed7d31";
+        passwordInput.style.borderColor = "#ed7d31";
+      }
+    }
+  }
+  button.onclick = function() {
+    let login = loginInput.value;
+    let password = passwordInput.value;
+    getInfo(login, password);
+  };
+</script>
+</body>
+
+</html>
