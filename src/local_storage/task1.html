@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    button {
+        width: 170px;
+        height: auto;
+        font-size: large;
+        background-color: black;
+        color: white;
+        padding: 7px;
+        border-color: black;
+    }
+    .gray {background-color: gray; border-color: gray}
+
+    .main {
+        justify-content: space-between;
+        width: 600px;
+        height: 100vh;
+        padding-left: 100px;
+        margin: 50px;
+        font-size: large;
+    }
+
+    input {
+        margin: 10px;
+        font-size: large;
+    }
+</style>
+<body>
+    <div class="main">
+        <label>NAME:</label>
+        <input type="text" id="nameInput"><br>
+        <label>SURNAME:</label>
+        <input type="text" id="surnameInput"><br>
+        <label>COUNTRY:</label>
+        <select id="countryInput" style="font-size: large; margin: 10px; width: 100px; text-align: center">
+            <option>KAZ</option>
+            <option>UZB</option>
+            <option>USA</option>
+            <option>GRM</option>
+        </select> <br>
+        <label>PHONE NUMBER:</label>
+        <input type="text" id="phonenumberInput"><br>
+        <button id="button_register">REGISTER</button>
+        <button id="button_draft" class="gray">SAVE TO DRAFT</button>
+    </div>
+    <script>
+        let button = document.getElementById('button_draft');
+        document.getElementById("nameInput").value = localStorage.getItem("NAME")
+        document.getElementById("surnameInput").value = localStorage.getItem("SURNAME")
+        document.getElementById("countryInput").value = localStorage.getItem("COUNTRY")
+        document.getElementById("phonenumberInput").value = localStorage.getItem("PHONE NUMBER")
+        function setToDraft() {
+            localStorage.setItem("NAME", document.getElementById("nameInput").value)
+            localStorage.setItem("SURNAME", document.getElementById("surnameInput").value)
+            localStorage.setItem("COUNTRY", document.getElementById("countryInput").value)
+            localStorage.setItem("PHONE NUMBER", document.getElementById("phonenumberInput").value)
+        }
+        button.onclick = setToDraft;
+    </script>
+</body>
+</html>
